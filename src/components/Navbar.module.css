@@ -138,27 +138,111 @@
   transform: scale(1.05);
 }
 
-.langToggle {
+.langDropdownWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.langDropdownBtn {
   background: transparent;
   border: 1px solid var(--glass-border);
   color: var(--foreground);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 700;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.5rem;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
   transition: var(--transition-normal);
 }
 
-.langToggle:hover {
-  background: rgba(var(--primary-hex), 0.1);
+.langDropdownBtn:hover {
+  background: rgba(var(--primary-hex), 0.05);
   border-color: var(--primary);
-  transform: scale(1.05);
+}
+
+.flagIcon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.langText {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.arrowIcon {
+  color: var(--text-muted);
+  transition: transform var(--transition-fast);
+  margin-left: 0.15rem;
+}
+
+.langDropdownWrapper:hover .arrowIcon {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 0.5rem;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.langDropdownWrapper:hover .dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdownItem {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: left;
+  transition: var(--transition-fast);
+}
+
+.dropdownItem:hover {
+  background: rgba(var(--primary-hex), 0.08);
+  color: var(--foreground);
+}
+
+.activeLang {
+  background: rgba(var(--primary-hex), 0.12);
+  color: var(--primary) !important;
+  font-weight: 600;
 }
 
 /* Mobile Hamburger Menu */

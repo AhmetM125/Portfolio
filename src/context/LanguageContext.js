@@ -57,19 +57,19 @@ export const translations = {
     heroWords: [".NET & C# Geliştirici", "Next.js & React Uzmanı", "Full-Stack Developer"],
     experienceList: [
       {
-        year: "2024 - Günümüz",
+        year: "2025 - Günümüz",
         title: "Senior Full-Stack Developer",
-        org: "TechLabs Global",
+        org: "Freelance",
       },
       {
         year: "2022 - 2024",
-        title: "Frontend Developer",
-        org: "Innova Digital Agency",
+        title: "Full-Stack Developer",
+        org: "Yakın Doğu Teknoloji",
       },
       {
-        year: "2018 - 2022",
-        title: "Bilgisayar Mühendisliği",
-        org: "Ege Üniversitesi",
+        year: "2018 - 2023",
+        title: "Yazılım Mühendisliği",
+        org: "Lefke Avrupa Üniversitesi",
       },
     ],
     projectsList: [
@@ -153,19 +153,19 @@ export const translations = {
     heroWords: [".NET & C# Developer", "Next.js & React Expert", "Full-Stack Developer"],
     experienceList: [
       {
-        year: "2024 - Present",
+        year: "2025 - Present",
         title: "Senior Full-Stack Developer",
-        org: "TechLabs Global",
+        org: "Freelance",
       },
       {
-        year: "2022 - 2024",
-        title: "Frontend Developer",
-        org: "Innova Digital Agency",
+        year: "2023 - 2025",
+        title: "Full-Stack Developer",
+        org: "Neareast Technology",
       },
       {
-        year: "2018 - 2022",
-        title: "Computer Engineering",
-        org: "Ege University",
+        year: "2018 - 2023",
+        title: "Software Engineering",
+        org: "European University of Lefke",
       },
     ],
     projectsList: [
@@ -178,7 +178,7 @@ export const translations = {
         image: "/barber_app.png",
         images: ["/barber_app.png", "/barber_app2.png", "/barber_app3.png"],
         imageCaptions: ["Appointment Calendar and Admin Interface", "Customer Appointment Screen", "Customer Appointment Tracking Screen"],
-        tech: ["C#", ".NET Core API", "React.js", "MSSQL", "Entity Framework", "CSS Modules"],
+        tech: ["C#", ".NET Core API", "React Native", "MSSQL", "Entity Framework"],
         demoUrl: "#",
         githubUrl: "#",
       },
@@ -191,7 +191,7 @@ export const translations = {
      image: "/PhysicalMng.jpg",
         images: ["/PhysicalMng.jpg", "/PhysicalMng2.jpg"],
         imageCaptions: ["Home Screen", "Financial Reporting"],
-        tech: ["C#", ".NET Core API", "React.js", "MSSQL", "Entity Framework", "CSS Modules"],
+        tech: ["C#", ".NET Core API", "React.js", "MSSQL", "Entity Framework"],
         demoUrl: "#",
         githubUrl: "#",
       }
