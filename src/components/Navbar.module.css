@@ -1,0 +1,226 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: var(--transition-normal);
+  padding: 1.5rem 0;
+}
+
+.scrolled {
+  padding: 1rem 0;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+}
+
+.logo span {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logoDot {
+  color: var(--accent);
+  -webkit-text-fill-color: var(--accent) !important;
+}
+
+.logoIcon {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logoIcon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+.navMenu {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  list-style: none;
+}
+
+.navLink {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  position: relative;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.navLink:hover {
+  color: var(--foreground);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: var(--transition-normal);
+  border-radius: 2px;
+}
+
+.navLink:hover::after,
+.active::after {
+  width: 100%;
+}
+
+.active {
+  color: var(--foreground);
+}
+
+.ctaBtn {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--foreground);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition-normal);
+  cursor: pointer;
+}
+
+.ctaBtn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+  transform: translateY(-2px);
+}
+
+.themeToggle {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--foreground);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.themeToggle:hover {
+  background: rgba(var(--primary-hex), 0.1);
+  border-color: var(--primary);
+  transform: scale(1.05);
+}
+
+.langToggle {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.langToggle:hover {
+  background: rgba(var(--primary-hex), 0.1);
+  border-color: var(--primary);
+  transform: scale(1.05);
+}
+
+/* Mobile Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1010;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2px;
+  background-color: var(--foreground);
+  border-radius: 2px;
+  transition: var(--transition-normal);
+  transform-origin: left center;
+}
+
+/* Mobile Nav Menu styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .navMenu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: rgba(var(--background-hex), 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid var(--glass-border);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    transition: var(--transition-normal);
+    z-index: 1005;
+  }
+  
+  .navMenuOpen {
+    right: 0;
+  }
+  
+  .hamburgerOpen span:nth-child(1) {
+    transform: rotate(45deg) translate(2px, -2px);
+  }
+  
+  .hamburgerOpen span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+  }
+  
+  .hamburgerOpen span:nth-child(3) {
+    transform: rotate(-45deg) translate(2px, 2px);
+  }
+}

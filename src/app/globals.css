@@ -1,26 +1,239 @@
-@import "tailwindcss";
-
+/* Design System Custom Properties (Default: Light Theme) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background-hex: 249, 250, 251; /* soft gray-white */
+  --background: rgb(var(--background-hex));
+  --foreground-hex: 17, 24, 39; /* dark gray-black */
+  --foreground: rgb(var(--foreground-hex));
+  
+  --primary-hex: 79, 70, 229; /* indigo */
+  --primary: rgb(var(--primary-hex));
+  --primary-hover: #4338ca;
+  
+  --secondary-hex: 147, 51, 234; /* purple/violet */
+  --secondary: rgb(var(--secondary-hex));
+  --secondary-hover: #7e22ce;
+  
+  --accent-hex: 13, 148, 136; /* teal */
+  --accent: rgb(var(--accent-hex));
+  
+  --text-muted: #4b5563;
+  --card-bg: rgba(255, 255, 255, 0.5);
+  --card-border: rgba(0, 0, 0, 0.06);
+  --card-hover-bg: rgba(255, 255, 255, 0.9);
+  --card-hover-border: rgba(79, 70, 229, 0.3);
+  
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-blur: 16px;
+  
+  --glow-primary: rgba(79, 70, 229, 0.06);
+  --glow-secondary: rgba(147, 51, 234, 0.06);
+  
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --progress-bg: rgba(0, 0, 0, 0.05);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Dark Theme Overrides */
+[data-theme='dark'] {
+  --background-hex: 8, 7, 16;
+  --background: rgb(var(--background-hex));
+  --foreground-hex: 243, 244, 246;
+  --foreground: rgb(var(--foreground-hex));
+  
+  --primary-hex: 99, 102, 241;
+  --primary: rgb(var(--primary-hex)); /* Indigo */
+  --primary-hover: #4f46e5;
+  
+  --secondary-hex: 168, 85, 247;
+  --secondary: rgb(var(--secondary-hex)); /* Purple/Violet */
+  --secondary-hover: #9333ea;
+  
+  --accent-hex: 20, 184, 166;
+  --accent: rgb(var(--accent-hex)); /* Teal */
+  
+  --text-muted: #9ca3af;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --card-hover-bg: rgba(255, 255, 255, 0.06);
+  --card-hover-border: rgba(99, 102, 241, 0.3);
+  
+  --glass-bg: rgba(8, 7, 16, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  
+  --glow-primary: rgba(99, 102, 241, 0.15);
+  --glow-secondary: rgba(168, 85, 247, 0.15);
+
+  --progress-bg: rgba(255, 255, 255, 0.05);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Global Reset & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Offset for sticky navbar */
+  height: -webkit-fill-available;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  position: relative;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Layout container styling */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Background Ambient Glow Elements */
+.ambient-glow-1 {
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, var(--glow-primary) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+  animation: float 20s ease-in-out infinite alternate;
+  transition: background var(--transition-normal);
+}
+
+.ambient-glow-2 {
+  position: fixed;
+  bottom: -10%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, var(--glow-secondary) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+  animation: float 25s ease-in-out infinite alternate-reverse;
+  transition: background var(--transition-normal);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.2);
+  border-radius: 5px;
+  border: 2px solid var(--background);
+  transition: var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.4);
+}
+
+/* Common Typography & Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* Helper Utility Classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.glassmorphism {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+}
+
+/* Keyframe Animations */
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(5%, 5%) scale(1.1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive CSS Utilities */
+.section-padding {
+  padding: 6rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 4rem 0;
+  }
 }
