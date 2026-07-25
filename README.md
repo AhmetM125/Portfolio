@@ -55,7 +55,7 @@ This is a modern, premium, and performance-optimized personal portfolio website 
 ## 📸 Proje Ekran Görüntüsü / Screenshot
 
 <div align="center">
-  <img src="public/yurdal1.png" alt="Application Screenshot" width="800" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255, 255, 255, 0.1);" />
+  <img src="public/mainpage.png" alt="Application Screenshot" width="800" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255, 255, 255, 0.1);" />
   <p><em>Web Application Showcase</em></p>
 </div>
 
