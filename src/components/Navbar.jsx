@@ -74,8 +74,8 @@ const Navbar = () => {
       <div className="container">
         <nav className={styles.navbar}>
           <div className={styles.logo} onClick={() => handleLinkClick("home")}>
-            <img src="/logo.jpeg" alt="Yurdsoft Logo" className={styles.logoIcon} />
-            <span>Yurdsoft</span><span className={styles.logoDot}>.</span>
+            <img src="/logo.jpeg" alt="Yurdalsoftware Logo" className={styles.logoIcon} />
+            <span>Yurdalsoftware</span><span className={styles.logoDot}>.</span>
           </div>
 
           <button 

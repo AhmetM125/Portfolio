@@ -24,11 +24,11 @@ const Footer = () => {
         <div className={styles.footerContent}>
           <div className={styles.logoArea}>
             <div className={styles.logo}>
-              <img src="/logo.jpeg" alt="Yurdsoft Logo" className={styles.logoIcon} />
-              <span>Yurdsoft</span><span className={styles.logoDot}>.</span>
+              <img src="/logo.jpeg" alt="Yurdalsoftware Logo" className={styles.logoIcon} />
+              <span>Yurdalsoftware</span><span className={styles.logoDot}>.</span>
             </div>
             <p className={styles.copyright}>
-              &copy; {currentYear} Ahmet Yurdal (Yurdsoft). {t("footerCopyright")}
+              &copy; {currentYear} Ahmet Yurdal (Yurdalsoftware). {t("footerCopyright")}
             </p>
           </div>
 

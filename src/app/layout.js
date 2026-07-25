@@ -14,13 +14,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Yurdsoft | Ahmet Yurdal - Portfolyo",
-  description: "Ahmet Yurdal - Yurdsoft bünyesinde geliştirilen modern web projeleri, tam yığın uygulamalar ve UI/UX tasarımları.",
-  keywords: ["Yurdsoft", "Ahmet Yurdal", "Next.js", "Portfolio", "Web Developer", "React"],
+  title: "Yurdalsoftware | Ahmet Yurdal - Portfolyo",
+  description: "Ahmet Yurdal - Yurdalsoftware bünyesinde geliştirilen modern web projeleri, tam yığın uygulamalar ve UI/UX tasarımları.",
+  keywords: ["Yurdalsoftware", "Ahmet Yurdal", "Next.js", "Portfolio", "Web Developer", "React"],
   authors: [{ name: "Ahmet Yurdal" }],
   openGraph: {
-    title: "Yurdsoft | Ahmet Yurdal - Portfolyo",
-    description: "Ahmet Yurdal - Yurdsoft bünyesinde geliştirilen modern web projeleri, tam yığın uygulamalar ve UI/UX tasarımları.",
+    title: "Yurdalsoftware | Ahmet Yurdal - Portfolyo",
+    description: "Ahmet Yurdal - Yurdalsoftware bünyesinde geliştirilen modern web projeleri, tam yığın uygulamalar ve UI/UX tasarımları.",
     type: "website",
   },
 };
