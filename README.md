@@ -52,18 +52,11 @@ This is a modern, premium, and performance-optimized personal portfolio website 
 
 ---
 
-## 📸 Proje Ekran Görüntüleri / Screenshots
+## 📸 Proje Ekran Görüntüsü / Screenshot
 
-### 💈 Berber Randevu Uygulaması (Barber Booking App)
 <div align="center">
-  <img src="public/barber_app.png" alt="Barber Booking UI" width="700" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255, 255, 255, 0.1);" />
-  <p><em>Barber Booking System - Dynamic Appointment & Shift Scheduler</em></p>
-</div>
-
-### 🩺 Fizik Tedavi Yönetim Uygulaması (Physical Therapy App)
-<div align="center">
-  <img src="public/phys.jpg" alt="Physical Therapy Dashboard" width="700" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255, 255, 255, 0.1);" />
-  <p><em>Physical Therapy Management UI - Dynamic Muscle Mapping & Treatment Analytics</em></p>
+  <img src="public/page.png" alt="Application Screenshot" width="800" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255, 255, 255, 0.1);" />
+  <p><em>Web Application Showcase</em></p>
 </div>
 
 ---
